@@ -7,6 +7,7 @@ end
 
 ruby '2.3.3'
 
+gem "simple_form"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
@@ -37,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 group :development do
