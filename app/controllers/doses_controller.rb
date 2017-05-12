@@ -17,13 +17,13 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
-    redirect_to @dose.cocktailjn,bn
+    redirect_to @dose.cocktail
   end
 
  private
 
   def dose_params
-    params.require[:dose].permit[:description, :ingredient_id]
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 
   def find_dose

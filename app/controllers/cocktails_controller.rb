@@ -1,8 +1,8 @@
-class CocktailsController < ApplicationController
+  class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show]
 
   def index
-    @cocktail = Cocktail.all
+    @cocktails = Cocktail.all
   end
 
   def show
@@ -22,10 +22,15 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path(@cocktail)
+  end
+
 private
 
   def cocktail_params
-    params.require[:cocktail].permit[:name]
+    params.require(:cocktail).permit(:name)
   end
 
   def find_cocktail
