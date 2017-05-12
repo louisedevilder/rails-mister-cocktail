@@ -7,8 +7,8 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-md-4 col-xs-12">
       <div class="card"
-      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('')">>
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.photo&.path || "cocktail_h6byb0.jpg", height: 300, width: 400, crop: :fill %>')">>
         <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
         <p><%= link_to "Delete", cocktail_path(cocktail), method: :delete %></p>
         </div>
