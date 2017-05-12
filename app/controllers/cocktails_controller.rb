@@ -27,10 +27,14 @@
     redirect_to cocktails_path(@cocktail)
   end
 
+  def product_params
+    params.require(:product).permit(:name, :description, :photo)
+  end
+
 private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def find_cocktail
